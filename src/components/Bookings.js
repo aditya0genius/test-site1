@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../axios";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
@@ -12,7 +12,7 @@ const Bookings = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const data = await (await axios.get('/api/bookings/getallbookings')).data
+                const data = await (await api.get('/api/bookings/getallbookings')).data
                 setbookings(data);
                 setloading(false);
             } catch (error) {

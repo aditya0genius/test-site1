@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import api from "../axios";
 import Loader from "../components/Loader";
-import Error from "../components/Error";
+//import Error from "../components/Error";
 import swal from 'sweetalert2'
 
 const Addroom = () => {
@@ -15,7 +15,7 @@ const Addroom = () => {
     const [imageurl2, setimageurl2] = useState([])
     const [imageurl3, setimageurl3] = useState([])
     const [loading, setloading] = useState(false);
-    const [error, seterror] = useState();
+ //   const [error, seterror] = useState();
 
     // useEffect(() => {
     //     async function fetchData() {
@@ -45,7 +45,7 @@ const Addroom = () => {
 
         try {
             setloading(true)
-            const results = await (await axios.post('/api/rooms/addroom',newRoom)).data
+            const results = await (await api.post('/api/rooms/addroom',newRoom)).data
             console.log(results)
             setloading(false)
             swal.fire('Congrats','Your new Room has been added successfully','success').then(results=>{

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../axios";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
@@ -11,7 +11,7 @@ const Users = () => {
     useEffect(() => {
         async function fetchData() {
             try {
-                const data = await (await axios.get('/api/user/getallusers')).data
+                const data = await (await api.get('/api/user/getallusers')).data
                 setusers(data);
                 setloading(false);
             } catch (error) {

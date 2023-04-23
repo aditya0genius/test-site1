@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import api from '../axios';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 
@@ -17,7 +17,7 @@ function Loginscreen() {
     }
       try {
         setloading(true);
-        const result = (await axios.post('/api/user/login', user)).data;
+        const result = (await api.post('/api/user/login', user)).data;
         setloading(false);
 
         localStorage.setItem('currentuser', JSON.stringify(result));

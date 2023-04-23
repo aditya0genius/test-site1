@@ -3,7 +3,7 @@ import React,{useEffect,useState} from 'react';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import swal from 'sweetalert2'
-import axios from 'axios';
+import api from '../axios';
 const { TabPane } = Tabs;
 
 function Profilescreen() {
@@ -45,7 +45,7 @@ export function MyBookings(){
             
             try {
                 setloading(true);
-                const data = await (await axios.post('/api/bookings/getbookingsbyuserid',{userid : user._id})).data;
+                const data = await (await api.post('/api/bookings/getbookingsbyuserid',{userid : user._id})).data;
                 console.log(data);
                 setbooking(data);
                 setloading(false);
@@ -62,7 +62,7 @@ export function MyBookings(){
 
         try {
             setloading(true);
-            const result = await (await axios.post('/api/bookings/cancelbooking',{bookingid,roomid})).data
+            const result = await (await api.post('/api/bookings/cancelbooking',{bookingid,roomid})).data
             console.log(result)
             setloading(false);
             swal.fire('congrats','Your booking has been cancelled','success').then(result=>{

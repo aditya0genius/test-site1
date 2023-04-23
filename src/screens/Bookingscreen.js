@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import axios from "axios";
+import api from "../axios";
 import { useParams } from "react-router-dom";
 import Loader from '../components/Loader';
 import Error from '../components/Error';
@@ -25,7 +25,7 @@ function Bookingscreen({match}) {
         }
         try {
             setloading(true);
-            const data = (await axios.post("/api/rooms/getroombyid" , {roomid})).data;
+            const data = (await api.post("/api/rooms/getroombyid" , {roomid})).data;
             settotalamount(data.rentperday * totaldays);
             setroom(data);
             setloading(false);
@@ -51,7 +51,7 @@ function Bookingscreen({match}) {
       };
 
       try {
-        const result = await axios.post('/api/bookings/bookroom',bookingDetail );
+        const result = await api.post('/api/bookings/bookroom',bookingDetail );
         window.location.href = '/profile'
       } catch (error) {
         console.log(error);
