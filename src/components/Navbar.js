@@ -1,30 +1,79 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.css";
 
-function Navbar() {
-  const user = JSON.parse(localStorage.getItem("currentuser"));
+const user = JSON.parse(localStorage.getItem("currentuser"));
   function logout() {
     localStorage.removeItem('currentuser');
     window.location.href="/login";
   }
-  return (
-    <div>
-      <nav className="navbar navbar-expand-lg">
-          <a className="navbar-brand" href="/home">
-            My Venue
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav mr-5">
+
+class Navbar extends Component {
+  
+  constructor(props) {
+    super();
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  state = {
+    navListClasses: "navList",
+    navOpen: false,
+  };
+
+  toggleNav = () => {
+    const toggleChange = !this.state.navOpen;
+
+    if (toggleChange)
+      this.setState({
+        navListClasses: "navList open",
+        navOpen: true,
+      });
+    else
+      this.setState({
+        navListClasses: "navList",
+        navOpen: false,
+      });
+  };
+
+  handleLogin(event) {
+    this.toggleModal();
+    alert(
+      "Username: " +
+        this.username.value +
+        " Password: " +
+        this.password.value +
+        " Remember: " +
+        this.remember.checked
+    );
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <div className="header">
+          <div className="navbarTop">
+            <div className="hamburger" onClick={(e) => this.toggleNav(e)}>
+              <div className="line line1"></div>
+              <div className="line line2"></div>
+              <div className="line line3"></div>
+            </div>
+            <Link to="/">
+              <img
+                src="\myVenue-Logo(Golden).png"
+                className="mobileNavLogo"
+                alt="MyVenue Logo"
+              />
+            </Link>
+            <ul
+              className={this.state.navListClasses}
+              onClick={(e) => this.toggleNav(e)}
+            >
+              <Link to="/">
+                <img src="myVenue-Logo(Golden).png" alt="MyVenue" height="30px" />
+              </Link>
+              <Link to="/services">Our Services</Link>
+              <Link to="/aboutus">Reach Us</Link>
               {user ? (
                 <>
                   {/* <h1 style={{color:'white'}}>{user.name}</h1> */}
@@ -46,7 +95,7 @@ function Navbar() {
                       <a className="dropdown-item" href="/profile">
                         Profile
                       </a>
-                      <a className="dropdown-item" href="#" onClick={logout}>
+                      <a className="dropdown-item" href="/" onClick={logout}>
                         Logout
                       </a>
                     </div>
@@ -72,9 +121,11 @@ function Navbar() {
               )}
             </ul>
           </div>
-      </nav>
-    </div>
-  );
+        </div>
+      </React.Fragment>
+    );
+  }
+  
 }
 
 export default Navbar;

@@ -1,0 +1,110 @@
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10000000;
+}
+a {
+  color:#C4AC66;
+}
+
+.header .navbarTop {
+  height: 10vh;
+  background-color: #fff6dc;
+  color: #C4AC66;
+  font-family: "Barlow Condensed", sans-serif;
+  z-index: 10000001;
+}
+
+.header .navbarTop .mobileNavLogo {
+  display: none;
+}
+
+.header .navbarTop .navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  z-index: 10000002;
+}
+
+.header .navbarTop .navList img {
+  width: 100px;
+}
+
+.header .navbarTop .navList a {
+  display: inline;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #C4AC66;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 792px) {
+  .header .navbarTop {
+    position: relative;
+    z-index: 5;
+  }
+  .header .navbarTop .mobileNavLogo {
+    position: absolute;
+    display: block;
+    width: 100px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .header .navbarTop .hamburger {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10000003;
+  }
+  .header .navbarTop .hamburger .line {
+    height: 3px;
+    background-color: #C4AC66;
+    margin: 5px;
+  }
+  .header .navbarTop .hamburger .line1 {
+    width: 30px;
+  }
+  .header .navbarTop .hamburger .line2 {
+    width: 20px;
+  }
+  .header .navbarTop .hamburger .line3 {
+    width: 27px;
+  }
+  .header .navbarTop .navList {
+    position: fixed;
+    background-color: #fef9e8;
+    height: 100vh;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-clip-path: circle(0px at 0% -10%);
+            clip-path: circle(0px at 0% -10%);
+    -webkit-transition: 0.65s all ease;
+    transition: 0.65s all ease;
+    pointer-events: none;
+  }
+  .header .navbarTop .navList img {
+    display: none;
+  }
+  .header .navbarTop .navList.open {
+    -webkit-clip-path: circle(1500px at 0% -10%);
+            clip-path: circle(1500px at 0% -10%);
+    pointer-events: all !important;
+  }
+}

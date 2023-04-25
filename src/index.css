@@ -23,10 +23,6 @@ code {
   color: white !important;
 }
 
-.nav-link{
-  color: white !important;
-}
-
 .navbar-nav{
   margin-left: auto !important;
 }
@@ -83,7 +79,7 @@ h2{
 
 
 .banner {
-  /*background: url("https://drive.google.com/file/d/1RsDDhdwzWRu2H6kyUnQEMl1ate5rRLGC/view?usp=sharing") center;*/
+  background: url('/src/images/party_banner.jpg');
   width: 100%;
   height: auto;
   background-size: 1500px 1000px;
