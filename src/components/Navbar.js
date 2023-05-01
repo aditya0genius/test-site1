@@ -73,7 +73,8 @@ class Navbar extends Component {
                 <img src="myVenue-Logo(Golden).png" alt="MyVenue" height="30px" />
               </Link>
               <Link to="/services">Our Services</Link>
-              <Link to="/aboutus">Reach Us</Link>
+              <Link to="/reachus">Reach Us</Link>
+              <Link to="/ourstory">Our Story</Link>
               {user ? (
                 <>
                   {/* <h1 style={{color:'white'}}>{user.name}</h1> */}

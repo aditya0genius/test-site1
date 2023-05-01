@@ -86,7 +86,7 @@ function Homescreen() {
     settype(e);
 
     if (e!=='all') {
-      const temprooms = duplicaterooms.filter(room=>room.type.toLowerCase()===e.toLowerCase())
+      const temprooms = duplicaterooms.filter(room=>room.venuetype==e)
       setrooms(temprooms);
     }
     else{
@@ -97,24 +97,25 @@ function Homescreen() {
     <div className="container">
 
       <div className="row mt-5 bs">
-        <div className="col-md-3">
-          <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
-        </div>
-
-        <div className="col-md-5">
-          <input type="text" className="form-control" placeholder="Search Room" 
-          value={searchkey} onChange={(e)=>{ setsearchkey(e.target.value) }} onKeyUp={filterBySearch} />
-        </div>
 
       <div className="col-md-3">
       <select className="form-control" value={type} onChange={(e)=>{ filterByType(e.target.value)}}>
-          <option value="all">All</option>
-          <option value="Marriage Hall">Marriage Hall</option>
-          <option value="Birthday Party">Birthday Party</option>
-          <option value="Party Hall">Party Hall</option>
+          <option value="all">All Venues</option>
+          <option value="marriagehall">Marriage Hall</option>
+          <option value="birthdayparty">Birthday Party</option>
+          <option value="partyhall">Party Hall</option>
           
         </select>
       </div>
+
+
+        <div className="col-md-5">
+          <input type="text" className="form-control" placeholder="Search Venue" 
+          value={searchkey} onChange={(e)=>{ setsearchkey(e.target.value) }} onKeyUp={filterBySearch} />
+        </div>
+      <div className="col-md-3">
+          <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
+        </div>
       </div>
 
 

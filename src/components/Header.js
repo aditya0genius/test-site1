@@ -39,7 +39,9 @@ import { Link } from "react-router-dom";
     
                </div>
               <Link to="/services">Our Services</Link>
+              
               <Link to="/aboutus">Reach Us</Link>
+              <Link to="/ourstory">Our Story</Link>
                 <h1>Welcome !</h1>
                 <Link to="/loginpage">LogIn</Link>
             

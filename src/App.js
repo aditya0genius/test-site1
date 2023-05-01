@@ -9,6 +9,7 @@ import Loginscreen from './screens/Loginscreen';
 import Profilescreen from './screens/Profilescreen';
 import Adminscreen from './screens/Adminscreen';
 import Landingscreen from './screens/Landingscreen';
+import ReachUs from './components/ReachUs';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/profile" element={<Profilescreen/> } />
       <Route path="/admin" element={<Adminscreen/> } />
       <Route path="/" element={<Landingscreen/> } />
+      <Route path="/reachus" element={<ReachUs/> } />
 
       </Routes>
       </BrowserRouter>
