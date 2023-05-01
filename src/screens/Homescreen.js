@@ -109,8 +109,10 @@ function Homescreen() {
       <div className="col-md-3">
       <select className="form-control" value={type} onChange={(e)=>{ filterByType(e.target.value)}}>
           <option value="all">All</option>
-          <option value="delux">Delux</option>
-          <option value="non-delux">Non-Delux</option>
+          <option value="Marriage Hall">Marriage Hall</option>
+          <option value="Birthday Party">Birthday Party</option>
+          <option value="Party Hall">Party Hall</option>
+          
         </select>
       </div>
       </div>
