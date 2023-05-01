@@ -12,7 +12,7 @@ function ReachUs() {
          <div className="row">
          <div className="col-md-6">
                <p>Email Address: myvenuee0601@gmail.com </p>
-               <a href ="https://www.instagram.com/myvenueofficial/" target="_blank">Insta Id: myvenueofficial </a>
+               <p>Insta Id: <a href ="https://www.instagram.com/myvenueofficial/" target="_blank"> @myvenueofficial </a></p>
                <p>Contact: 8349219067 ,9770302582, 8319042384, 7000284616, 9584913846</p>
          </div>
          <div className="col-md-6">

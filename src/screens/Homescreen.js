@@ -86,7 +86,7 @@ function Homescreen() {
     settype(e);
 
     if (e!=='all') {
-      const temprooms = duplicaterooms.filter(room=>room.venuetype==e)
+      const temprooms = duplicaterooms.filter(room=>room.venuetype[0] == e.toString())
       setrooms(temprooms);
     }
     else{

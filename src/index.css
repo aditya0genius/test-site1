@@ -96,3 +96,14 @@ h2{
   color: black !important;
   margin-top: 20px;
 }
+.container h1 {
+  font-size: 22px;
+}
+.container p {
+  font-size: 18px;
+}
+.container{
+  color: #9e8847;
+  background-color: #fdf7e7;
+  
+}

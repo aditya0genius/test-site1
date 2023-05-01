@@ -10,6 +10,8 @@ import Profilescreen from './screens/Profilescreen';
 import Adminscreen from './screens/Adminscreen';
 import Landingscreen from './screens/Landingscreen';
 import ReachUs from './components/ReachUs';
+import OurStory from './components/OurStory';
+import OurServices from './components/OurServices';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
       <Route path="/admin" element={<Adminscreen/> } />
       <Route path="/" element={<Landingscreen/> } />
       <Route path="/reachus" element={<ReachUs/> } />
+      <Route path="/ourstory" element={<OurStory/> } />
+      <Route path="/services" element={<OurServices/> } />
 
       </Routes>
       </BrowserRouter>
