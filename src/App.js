@@ -13,6 +13,7 @@ import ReachUs from './components/ReachUs';
 import OurStory from './components/OurStory';
 import OurServices from './components/OurServices';
 import Footer from './components/Footer';
+import ScrollToTop from './helpers/ScrollToTop';
 
 
 function App() {
@@ -21,7 +22,9 @@ function App() {
       
       <BrowserRouter>
       <Navbar/>
+      <ScrollToTop />
       <Routes>
+
 
       <Route path="/home" element={<Homescreen/>} />
       <Route path="/book/:roomid/:fromdate/:todate" element={<Bookingscreen/>} />

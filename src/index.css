@@ -102,3 +102,25 @@ h2{
 .container p {
   font-size: 18px;
 }
+
+.bs {
+  margin-bottom: 50px;
+}
+
+.bs input {
+  margin-bottom: 10px;
+}
+.homebuttons {
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.homebuttons button {
+  margin: 10px;
+}
+.bs h4 {
+  text-align: center;
+}

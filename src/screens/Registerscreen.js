@@ -47,12 +47,12 @@ function Registerscreen() {
     <div>
         {loading && (<Loader/>)}
         {error && (<Error/>)}
-        <div className="row justify-content-center mt-5">
-            <div className="col-md-5 mt-3">
+        <div className="row justify-content-center mt-1">
+            <div className="col-md-5 mt-1">
 
                 <div className='bs'>
                     {success && (<Success message="Registration success"/>)}        
-                    <h2>Register</h2>
+                    <h2>Register to MyVenue</h2>
                     <input type="text" className="form-control" placeholder='name' value={name} onChange={(e)=>{setname(e.target.value)}} />
                     <input type="text" className="form-control" placeholder='email' value={email} onChange={(e)=>{setemail(e.target.value)}} />
                     <input type="password" className="form-control" placeholder='password' value={password} onChange={(e)=>{setpassword(e.target.value)}} />

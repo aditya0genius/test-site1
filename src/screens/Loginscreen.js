@@ -35,11 +35,11 @@ function Loginscreen() {
   return (
     <div>
       {loading && (<Loader />)}
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-5 mt-3">
+      <div className="row justify-content-center mt-1">
+        <div className="col-md-5 mt-1">
           {error && (<Error message='Invalid Credentionals ' />)}
           <div className='bs'>
-            <h2>Login</h2>
+            <h2>Login to MyVenue</h2>
             <input type="text" className="form-control" placeholder='email' value={email} onChange={(e) => { setemail(e.target.value) }} />
             <input type="password" className="form-control" placeholder='password' value={password} onChange={(e) => { setpassword(e.target.value) }} />
             <button className='btn btn-primary mt-3' onClick={Login}>Login</button>
