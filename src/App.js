@@ -12,6 +12,8 @@ import Landingscreen from './screens/Landingscreen';
 import ReachUs from './components/ReachUs';
 import OurStory from './components/OurStory';
 import OurServices from './components/OurServices';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -33,7 +35,9 @@ function App() {
       <Route path="/services" element={<OurServices/> } />
 
       </Routes>
+      
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
