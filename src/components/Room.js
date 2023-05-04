@@ -21,9 +21,9 @@ function Room({ room , fromdate , todate}) {
       <div className="col-md-7">
         <h1>{room.name}</h1>
         <b>
-          <p>Max Count : {room.maxcount}</p>
+          <p>Max Count : {room.maxguest}</p>
           <p>Phone Number : {room.phonenumber}</p>
-          <p>Type : {room.type}</p>
+          <p>Type : {room.venuetype}</p>
         </b>
 
         <div style={{ float: "right" }}>
@@ -54,7 +54,7 @@ function Room({ room , fromdate , todate}) {
               </Carousel.Item>;
             })}
           </Carousel>
-          <p>{room.description}</p>
+          <p>{room.venuedetails}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

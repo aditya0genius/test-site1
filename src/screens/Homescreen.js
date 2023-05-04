@@ -87,7 +87,7 @@ function Homescreen() {
     settype(e);
 
     if (e !== 'all') {
-      const temprooms = duplicaterooms.filter(room => room.venuetype[0] == e.toString())
+      const temprooms = duplicaterooms.filter(room => room.venuetype.includes(e.toString()))
       setrooms(temprooms);
     }
     else {
@@ -102,9 +102,9 @@ function Homescreen() {
         <div className="col-md-3">
           <select className="form-control" value={type} onChange={(e) => { filterByType(e.target.value) }}>
             <option value="all">All Venues</option>
-            <option value="marriagehall">Marriage Hall</option>
-            <option value="birthdayparty">Birthday Party</option>
-            <option value="partyhall">Party Hall</option>
+            <option value="Marriage Hall">Marriage Hall</option>
+            <option value="Birthday Party">Birthday Party</option>
+            <option value="Party Hall">Party Hall</option>
 
           </select>
         </div>
@@ -141,7 +141,7 @@ function Homescreen() {
         <>
           <div className="row justify-content-center mt-1">
             <div className="col-md-5 mt-1">
-              <div className='bs'>
+              <div className='bs forms'>
               <h4>Login or Register to MyVenue</h4>
               
               <div className="homebuttons">

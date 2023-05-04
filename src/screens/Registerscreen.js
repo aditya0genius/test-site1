@@ -50,7 +50,7 @@ function Registerscreen() {
         <div className="row justify-content-center mt-1">
             <div className="col-md-5 mt-1">
 
-                <div className='bs'>
+                <div className='bs forms'>
                     {success && (<Success message="Registration success"/>)}        
                     <h2>Register to MyVenue</h2>
                     <input type="text" className="form-control" placeholder='name' value={name} onChange={(e)=>{setname(e.target.value)}} />
