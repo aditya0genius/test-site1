@@ -23,6 +23,7 @@ const Footer = () => {
             <FooterLink href="#">Aim</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
             <FooterLink href="#">Testimonials</FooterLink>
+            <FooterLink href="/faqs">FAQs</FooterLink>
           </Column>
           <Column>
             <Heading>Services</Heading>
@@ -52,14 +53,14 @@ const Footer = () => {
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="https://twitter.com/MyVenue0601?s=20" target="_blank">
               <i className="fab fa-twitter">
                 <span style={{ marginLeft: "10px" }}>
                   Twitter
                 </span>
               </i>
             </FooterLink>
-            <FooterLink href="#">
+            <FooterLink href="https://www.youtube.com/@Myvenue-0106" target="_blank">
               <i className="fab fa-youtube">
                 <span style={{ marginLeft: "10px" }}>
                   Youtube

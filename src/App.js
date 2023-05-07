@@ -14,6 +14,7 @@ import OurStory from './components/OurStory';
 import OurServices from './components/OurServices';
 import Footer from './components/Footer';
 import ScrollToTop from './helpers/ScrollToTop';
+import FAQs from './components/faqs';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Route path="/reachus" element={<ReachUs/> } />
       <Route path="/ourstory" element={<OurStory/> } />
       <Route path="/services" element={<OurServices/> } />
+      <Route path="/faqs" element={<FAQs/> } />
 
       </Routes>
       
