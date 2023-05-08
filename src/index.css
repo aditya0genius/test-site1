@@ -127,3 +127,10 @@ h2{
 .bs h4 {
   text-align: center;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}

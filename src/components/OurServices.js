@@ -3,7 +3,7 @@ import Card from './Card';
 
 function OurServices() {
   return (
-    <div className='container-fluid col-md-12 '>
+    <div className='container-fluid'>
         
         <h2>We Provides Venues For </h2>
         <hr />
