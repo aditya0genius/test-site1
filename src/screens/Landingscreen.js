@@ -14,10 +14,9 @@ const Landingscreen = () => {
         <h2 data-aos='zoom-in' style={{color:'white',fontSize:'100px'}}>My Venue</h2>
         <h1 data-aos='zoom-out' style={{color:'white'}}>"Your Personal Party Planner!"</h1>
 
-        <Link to='/home'>
+        <Link to='/services'>
             <button className='btn landingbtn' style={{color:'black'}}>Plan My Party</button>
         </Link>
-
         </div>
     </div>
   )

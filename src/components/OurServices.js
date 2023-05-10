@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import {Link} from 'react-router-dom';
 
 function OurServices() {
   return (
@@ -7,7 +8,9 @@ function OurServices() {
         
         <h2>We Provides Venues For </h2>
         <hr />
+            <Link to='/home'>
             <div className="flex-container">
+            
             <Card
                 src="/wedding-venue.jpg"
                 title="Book Wedding Venues"
@@ -38,7 +41,10 @@ function OurServices() {
                 title="Kitty Party"
                 description="Get venues for small gathering starting from 25 people"
             />
+           
+            
             </div>
+            </Link>
             
         
         
