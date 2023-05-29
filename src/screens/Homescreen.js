@@ -131,7 +131,9 @@ function Homescreen() {
                 rooms.map((room) => {
                   return <div className="col-md-9 mt-1 mb-2" >
                     <Room room={room} fromdate={formdate} todate={todate} />
+                    
                   </div>;
+                  
                 })
               )}
             </div>
@@ -139,8 +141,21 @@ function Homescreen() {
         </>
       ) : (
         <>
-          <div className="row justify-content-center mt-1">
-            <div className="col-md-5 mt-1">
+        <Room room={
+                      {
+                        name:"OSR Royal Green Resort",
+                        maxguest:"200",
+                        phonenumber:"XXXX XXXX XXX",
+                        venuetype:"Wedding Venue",
+                        imageurls:[
+                        "https://image.wedmegood.com/resized/450X/uploads/member/1229022/1588235348_Screenshot_from_2020_04_30_13_58_34.png"
+                      ],
+                        venuedetails:"The idol Venue place to take care of your part and its delicacies"
+                      }
+                    }/>
+          <div className="row justify-content-center">
+            <div className="col-md-5">
+            
               <div className='bs forms'>
               <h4>Login or Register to MyVenue</h4>
               

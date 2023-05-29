@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Container,
@@ -23,7 +24,8 @@ const Footer = () => {
             <FooterLink href="#">Aim</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
             <FooterLink href="#">Testimonials</FooterLink>
-            <FooterLink href="/faqs">FAQs</FooterLink>
+            <FooterLink>FAQs</FooterLink>
+            
           </Column>
           <Column>
             <Heading>Services</Heading>
@@ -68,6 +70,22 @@ const Footer = () => {
               </i>
             </FooterLink>
           </Column>
+        </Row>
+        <Row>
+          <FooterLink href="/tncs">
+              Terms and Conditions
+        </FooterLink>
+        <FooterLink href="/cancellation">
+            Cancellation & Refund Policy
+        </FooterLink>
+        <FooterLink href="/privacypolicy">
+              Our Privacy Poicy
+        </FooterLink>
+        <FooterLink href="/contactus">
+              Reach Us for other queries
+        </FooterLink>
+         
+          
         </Row>
       </Container>
     </Box>

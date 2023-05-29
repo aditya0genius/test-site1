@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import moment from 'moment';
-import StripeCheckout from 'react-stripe-checkout';
 
 function Bookingscreen({match}) {
     const [room, setroom] = useState();
@@ -26,7 +25,7 @@ function Bookingscreen({match}) {
         try {
             setloading(true);
             const data = (await api.post("/api/rooms/getroombyid" , {roomid})).data;
-            settotalamount(data.rentperday * totaldays);
+            settotalamount(data.venuecost * totaldays);
             setroom(data);
             setloading(false);
         } catch (error) {
@@ -36,7 +35,50 @@ function Bookingscreen({match}) {
       }
       fetchData();
     }, []);
+
+    const loadScript = (src) => {
+      return new Promise((resolve) => {
+        const script = document.createElement('script')
+        script.src = src
+        
+        script.onload = () => {
+          resolve(true)
+        }
+        script.onerror = () => {
+          resolve(false)
+        }
+        document.body.appendChild(script)
+      })
+
+    }
     
+    const displayRazorpay = async (amount) => {
+      const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+      if (!res) {
+        alert('You are Offline... Failed to load Razorpay SDK')
+        return
+
+      }
+
+      const options = {
+        key: "rzp_test_H63g1IgCeYlsC3",
+        currency: "INR",
+        amount: totalamount *100,
+        name: "MyVenue",
+        description: "payment of the venue",
+        image: '',
+        handler: function (response) {
+          alert(response.razorpay_payment_id);
+          alert("Payment Successfully")
+        },
+        prefill:{
+          name: "MyVenue"
+        }
+
+      };
+      const paymentObject = new window.Razorpay(options)
+      paymentObject.open()
+    }
     
     async function onToken(token){
       console.log(token);
@@ -47,7 +89,7 @@ function Bookingscreen({match}) {
         todate,
         totalamount,
         totaldays,
-        token
+      
       };
 
       try {
@@ -57,6 +99,8 @@ function Bookingscreen({match}) {
         console.log(error);
       }
     }
+
+    
 
 
   return (
@@ -83,21 +127,15 @@ function Bookingscreen({match}) {
                   <hr />
                   <b>
                     <p>Total days: {totaldays} </p>
-                    <p>Rent per day: {room.rentperday}</p>
-                    <p>Total amount: {totalamount} </p>
+                    <p>Rent per day: {room.venuecost}</p>
+                    <p>Total amount: {(room.venuecost * totaldays)} </p>
                   </b>
                 </div>
                 <div style={{float : 'right'}}>
-                <StripeCheckout
-                  amount={totalamount * 100}
-                  token={onToken}
-                  currency='INR'
-                  stripeKey="pk_test_51K7dyhSC6jJVpViAEdamZtVGulyLLQMsGpUC6BmWMczamHjwDAJ3bWRq6GJWWztJwzZM6mbE3Hc0VL69CW4ZxhKd00yrC8PlpG"
-                  >
-                    <button className='btn btn-primary'>
+                  
+                    <button className='btn btn-primary' onClick={() => displayRazorpay(totalamount)}>
                       Pay now{" "}
                     </button>
-                    </StripeCheckout>
 
                 </div>
             </div>

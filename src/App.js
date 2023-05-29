@@ -14,7 +14,12 @@ import OurStory from './components/OurStory';
 import OurServices from './components/OurServices';
 import Footer from './components/Footer';
 import ScrollToTop from './helpers/ScrollToTop';
+
 import FAQs from './components/faqs';
+import TermsNConditions from './components/TermsNConditions';
+import PrivacyPoicy from './components/PrivacyPoicy';
+import CancellationNRefund from './components/CancellationNRefund';
+import ContactPage from './components/ContactPage';
 
 
 function App() {
@@ -38,6 +43,10 @@ function App() {
       <Route path="/ourstory" element={<OurStory/> } />
       <Route path="/services" element={<OurServices/> } />
       <Route path="/faqs" element={<FAQs/> } />
+      <Route path="/tncs" element={<TermsNConditions/> } />
+      <Route path="/privacypolicy" element={<PrivacyPoicy/> } />
+      <Route path="/cancellation" element={<CancellationNRefund/> } />
+      <Route path="/contactus" element={<ContactPage/> } />
 
       </Routes>
       

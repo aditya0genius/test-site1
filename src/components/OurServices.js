@@ -10,6 +10,10 @@ function OurServices() {
         <hr />
             <Link to='/home'>
             <div className="flex-container">
+                <Card
+                src="/myvenue_USP.jpeg"
+                title="Book Wedding Venues"
+            />
             
             <Card
                 src="/wedding-venue.jpg"
