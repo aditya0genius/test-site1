@@ -9,6 +9,7 @@
     "antd": "^4.21.5",
     "aos": "^2.3.4",
     "axios": "^0.27.2",
+    "google-map-react": "^2.2.1",
     "isexe": "^2.0.0",
     "moment": "^2.29.3",
     "react": "^18.2.0",
@@ -53,5 +54,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://myvenue.onrender.com/"
+  "proxy": "https://myvenue-386407.el.r.appspot.com/"
 }

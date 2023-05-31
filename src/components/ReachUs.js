@@ -14,6 +14,7 @@ function ReachUs() {
                <p>Email Address: myvenuee0601@gmail.com </p>
                <p>Insta Id: <a href ="https://www.instagram.com/myvenueofficial/" target="_blank"> @myvenueofficial </a></p>
                <p>Contact: 8349219067 ,9770302582, 8319042384, 7000284616, 9584913846</p>
+               <p>Address: 2nd Floor, SBI Intouch, Vidya Vihar Colony, Nehru Nagar, Bhilai, Chhattisgarh 490020</p>
          </div>
          <div className="col-md-6">
             
