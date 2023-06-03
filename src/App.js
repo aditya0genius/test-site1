@@ -20,6 +20,8 @@ import TermsNConditions from './components/TermsNConditions';
 import PrivacyPoicy from './components/PrivacyPoicy';
 import CancellationNRefund from './components/CancellationNRefund';
 import ContactPage from './components/ContactPage';
+import Aim from './components/Aim';
+import Vision from './components/Vision';
 
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
       <Route path="/privacypolicy" element={<PrivacyPoicy/> } />
       <Route path="/cancellation" element={<CancellationNRefund/> } />
       <Route path="/contactus" element={<ContactPage/> } />
+      <Route path="/aim" element={<Aim/> } />
+      <Route path="/vision" element={<Vision/> } />
 
       </Routes>
       

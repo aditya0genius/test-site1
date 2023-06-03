@@ -109,7 +109,10 @@ function Bookingscreen({match}) {
         <div className="row justify-content-center my-3 bs">
             <div className="col-md-6 my-2">
                 <h1>{room.name}</h1>
+                <div className='booking-img'>
                 <img src={room.imageurls[0]} alt="something" className='bigimgs'/>
+                </div>
+                
             </div>
             <div className="col-md-4 ">
               <div style={{textAlign : 'right'}}>

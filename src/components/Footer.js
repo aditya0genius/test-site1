@@ -21,23 +21,23 @@ const Footer = () => {
         <Row>
           <Column>
             <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
-            <FooterLink>FAQs</FooterLink>
+            <FooterLink href="/aim">Aim</FooterLink>
+            <FooterLink href="/vision">Vision</FooterLink>
+            {/* <FooterLink href="#">Testimonials</FooterLink> */}
+            <FooterLink href="/faqs">FAQs</FooterLink>
             
           </Column>
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="#">Wedding Venues</FooterLink>
-            <FooterLink href="#">Party Venues</FooterLink>
-            <FooterLink href="#">Decorators</FooterLink>
-            <FooterLink href="#">Blog</FooterLink>
+            <FooterLink href="/home">Wedding Venues</FooterLink>
+            <FooterLink href="/home">Party Venues</FooterLink>
+            {/* <FooterLink href="#">Decorators</FooterLink>
+            <FooterLink href="#">Blog</FooterLink> */}
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
-            <FooterLink href="#">Bhilai-Durg</FooterLink>
-            <FooterLink href="#">Raipur</FooterLink>
+            <FooterLink href="/reachus">Bhilai-Durg</FooterLink>
+            <FooterLink href="/reachus">Raipur</FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
