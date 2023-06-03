@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function OurServices() {
   return (
-    <div className='container-fluid'>
+    <div className='row container-fluid'>
         <div className='Venue-service'>
         <h2>We Provides Venues For </h2>
         <hr />

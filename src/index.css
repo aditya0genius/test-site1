@@ -83,7 +83,7 @@ h2{
 .banner {
   z-index: 1;
   position: absolute;
-  top:70px;
+  top:100px;
   width: 100%;
   height: auto;
 }
@@ -91,7 +91,7 @@ h2{
 .landing img {
   z-index: 0;
   width: 100%;
-  min-height: 450px;
+  min-height: 550px;
   height: auto;
 }
 
