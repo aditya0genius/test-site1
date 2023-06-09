@@ -7,6 +7,7 @@ import {
   Column,
   FooterLink,
   Heading,
+  End,
 } from "./FooterStyles";
   
 const Footer = () => {
@@ -87,6 +88,16 @@ const Footer = () => {
          
           
         </Row>
+
+          <End>
+          <div className="end">
+            <p>
+         My Venue &#169; 2023 All Rights Reserved - Site owned by <a href="https://www.instagram.com/aditya0genius/" target="_blank">Aditya Deshmukh</a></p>
+        </div>
+          </End>
+        
+  
+        
       </Container>
     </Box>
   );

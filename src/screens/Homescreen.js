@@ -1,6 +1,6 @@
 //import { getAllRooms } from "../actions/roomActions";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api from "../axios";
 import Room from "../components/Room";
 import Loader from "../components/Loader";
@@ -12,6 +12,7 @@ const { RangePicker } = DatePicker;
 const user = JSON.parse(localStorage.getItem("currentuser"));
 
 function Homescreen() {
+  const { roomtype } = useParams();
   const [rooms, setrooms] = useState([]);
   const [loading, setloading] = useState();
   const [error, seterror] = useState();
@@ -19,7 +20,7 @@ function Homescreen() {
   const [todate, settodate] = useState();
   const [duplicaterooms, setduplicaterooms] = useState([]);
   const [searchkey, setsearchkey] = useState('');
-  const [type, settype] = useState('all')
+  const [type, settype] = useState('all');
   // const dispatch = useDispatch()
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function Homescreen() {
         setrooms(data);
         setduplicaterooms(data);
         setloading(false);
+
       } catch (error) {
         seterror(true);
         console.log(error);
@@ -104,7 +106,7 @@ function Homescreen() {
             <option value="all">All Venues</option>
             <option value="Marriage Hall">Marriage Hall</option>
             <option value="Birthday Party">Birthday Party</option>
-            <option value="Party Hall">Party Hall</option>
+            <option value="Pool Party">Party Hall</option>
 
           </select>
         </div>
@@ -130,6 +132,7 @@ function Homescreen() {
 
                 rooms.map((room) => {
                   return <div className="col-md-9 mt-1 mb-2" >
+                    {roomtype}
                     <Room room={room} fromdate={formdate} todate={todate} />
                     
                   </div>;

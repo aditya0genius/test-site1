@@ -26,7 +26,8 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 60px;
+  margin-left: 20px;
+  justify-contents: around
 `;
    
 export const Row = styled.div`
@@ -34,6 +35,7 @@ export const Row = styled.div`
   grid-template-columns: repeat(auto-fill, 
                          minmax(185px, 1fr));
   grid-gap: 20px;
+  justify-content: around;
    
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, 
@@ -55,6 +57,14 @@ export const FooterLink = styled.a`
    
 export const Heading = styled.p`
   font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: bold;
+`;
+
+export const End = styled.p`
+  text-align: center;
+  font-size: 14px;
   color: #fff;
   margin-bottom: 10px;
   font-weight: bold;

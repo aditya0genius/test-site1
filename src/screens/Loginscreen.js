@@ -21,7 +21,7 @@ function Loginscreen() {
         setloading(false);
 
         localStorage.setItem('currentuser', JSON.stringify(result));
-        window.location.href = '/home'
+        window.location.href = '/services'
 
       }
      catch (error) {

@@ -21,7 +21,7 @@ function Room({ room , fromdate , todate}) {
       <div className="col-md-7">
         <h1>{room.name}</h1>
         <b>
-          <p>Venue Location: {room.phonenumber}</p>
+          <p>Venue Location: {room.location}</p>
           <p>Maximum Guest : {room.maxguest}</p>
           <p>Cost per Day: {room.venuecost}</p>
         </b>

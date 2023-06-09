@@ -16,6 +16,7 @@ function Bookingscreen({match}) {
     const todates = moment(todate , 'DD-MM-YYYY')
     const totaldays = moment.duration(todates.diff(fromdates)).asDays()+1
     const [totalamount , settotalamount] = useState();
+    const [payableamount , setpayableamount] = useState();
 
     useEffect(() => {
       async function fetchData() {
@@ -26,6 +27,7 @@ function Bookingscreen({match}) {
             setloading(true);
             const data = (await api.post("/api/rooms/getroombyid" , {roomid})).data;
             settotalamount(data.venuecost * totaldays);
+            setpayableamount((data.venuecost * totaldays*10)/100);
             setroom(data);
             setloading(false);
         } catch (error) {
@@ -63,7 +65,7 @@ function Bookingscreen({match}) {
       const options = {
         key: "rzp_test_H63g1IgCeYlsC3",
         currency: "INR",
-        amount: totalamount *100,
+        amount: payableamount *100,
         name: "MyVenue",
         description: "payment of the venue",
         image: '',
@@ -87,7 +89,7 @@ function Bookingscreen({match}) {
         userid:JSON.parse(localStorage.getItem('currentuser'))._id,
         fromdate,
         todate,
-        totalamount,
+        payableamount,
         totaldays,
       
       };
@@ -107,6 +109,7 @@ function Bookingscreen({match}) {
     <div className='m-5' data-aos="flip-left">
       {loading ? (<h1><Loader/></h1>) : room ? (<div>
         <div className="row justify-content-center my-3 bs">
+
             <div className="col-md-6 my-2">
                 <h1>{room.name}</h1>
                 <div className='booking-img'>
@@ -131,18 +134,20 @@ function Bookingscreen({match}) {
                   <b>
                     <p>Total days: {totaldays} </p>
                     <p>Rent per day: {room.venuecost}</p>
-                    <p>Total amount: {(room.venuecost * totaldays)} </p>
+                    <p>Total amount of the venue: {(room.venuecost * totaldays)} </p>
+                    <p>Venue Booking Amount: {payableamount} </p>
                   </b>
                 </div>
                 <div style={{float : 'right'}}>
                   
-                    <button className='btn btn-primary' onClick={() => displayRazorpay(totalamount)}>
-                      Pay now{" "}
+                    <button className='btn btn-primary' onClick={() => displayRazorpay(payableamount)}>
+                      Pay now ₹{payableamount}
                     </button>
 
                 </div>
             </div>
         </div>
+        <h6>*<mark>We only Charge Booking Amount (10% of Total Amount) for the Venues we provide. Balance amount is to be submitted during venue visit</mark>*</h6>
       </div>) : (<Error/>) }
     </div>
   )

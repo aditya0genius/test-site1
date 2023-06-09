@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 import {Link} from 'react-router-dom';
 
 function OurServices() {
+    const [roomtype,setroomtype] = useState('');
   return (
     <div className='row container-fluid'>
         <div className='Venue-service'>
@@ -14,12 +15,18 @@ function OurServices() {
                 src="https://storage.googleapis.com/my-venue/banner%20images/myvenue_USP.jpeg"
                 alt="BookWeddingVenues" height={'350px'} width={'200px'}
             />
-            <Link to='/home'>
-            <Card
-                src="/wedding-venue.jpg"
-                title="Book Wedding Venues"
-                description="Make your wedding dream come true explore spacious venues around your town."
-            />
+
+            <Link  to={`/home/MarriageHall`}>
+                <div>
+                <Card
+
+src="/wedding-venue.jpg"
+title="Book Wedding Venues"
+description="Make your wedding dream come true explore spacious venues around your town."
+/>
+                </div>
+            
+            
             </Link>
             
             <Link to='/home'>
