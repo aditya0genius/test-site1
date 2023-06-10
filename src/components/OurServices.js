@@ -29,7 +29,7 @@ description="Make your wedding dream come true explore spacious venues around yo
             
             </Link>
             
-            <Link to='/home'>
+            <Link to='/home/Engagement'>
             <Card
                 src="/decorators.jpg"
                 title="Book for Engagement"
@@ -37,7 +37,7 @@ description="Make your wedding dream come true explore spacious venues around yo
             />
             </Link>
             
-            <Link to='/home'>
+            <Link to='/home/BirthdayParty'>
             <Card
                 src="/birthdayParty_home.jpg"
                 title="Birthday Parties"
@@ -45,7 +45,7 @@ description="Make your wedding dream come true explore spacious venues around yo
             />
             </Link>
             
-            <Link to='/home'>
+            <Link to='/home/PoolParty'>
             <Card
                 src="/poolParty_home.jpg"
                 title="Pool Party"
@@ -53,7 +53,7 @@ description="Make your wedding dream come true explore spacious venues around yo
             />
             </Link>
         
-            <Link to='/home'>
+            <Link to='/home/CollegeParty'>
             <Card
                 src="\collegeParty_home.jpg"
                 title="College Party"
@@ -61,7 +61,7 @@ description="Make your wedding dream come true explore spacious venues around yo
             />
             </Link>
             
-            <Link to='/home'>
+            <Link to='/home/KittyParty'>
             <Card
                 src="\KittyParty_home.jpg"
                 title="Kitty Party"

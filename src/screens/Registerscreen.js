@@ -3,7 +3,7 @@ import api from '../axios';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import Success from '../components/Success';
-import { useNavigate } from 'react-router-dom';
+import { Route, useNavigate } from 'react-router-dom';
 
 
 function Registerscreen() {
@@ -37,7 +37,7 @@ function Registerscreen() {
                 setphone('')
                 setpassword('')
                 setcpassword('')
-                navigate("/login");
+                window.location.href= '/login';
 
             } catch (error) {
                 console.log(error);

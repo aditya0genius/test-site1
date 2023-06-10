@@ -31,7 +31,17 @@ function Homescreen() {
         // const data = dispatch(getAllRooms)
         const data = (await api.get("/api/rooms/getallrooms")).data;
 
-        setrooms(data);
+        
+        if(roomtype!=null){
+          const temprooms = data.filter(room => room.venuetype.includes(roomtype))
+          setrooms(temprooms);
+        }
+        else{
+          setrooms(data);
+
+        }
+
+        
         setduplicaterooms(data);
         setloading(false);
 
@@ -96,6 +106,9 @@ function Homescreen() {
       setrooms(duplicaterooms)
     }
   }
+  
+
+
   return (
     <div className="container">
 
@@ -103,10 +116,10 @@ function Homescreen() {
 
         <div className="col-md-3">
           <select className="form-control" value={type} onChange={(e) => { filterByType(e.target.value) }}>
-            <option value="all">All Venues</option>
-            <option value="Marriage Hall">Marriage Hall</option>
-            <option value="Birthday Party">Birthday Party</option>
-            <option value="Pool Party">Party Hall</option>
+            <option value="all">Select Venue Type</option>
+            <option value="MarriageHall">Marriage Hall</option>
+            <option value="BirthdayParty">Birthday Party</option>
+            <option value="PoolParty">Party Hall</option>
 
           </select>
         </div>
@@ -132,7 +145,6 @@ function Homescreen() {
 
                 rooms.map((room) => {
                   return <div className="col-md-9 mt-1 mb-2" >
-                    {roomtype}
                     <Room room={room} fromdate={formdate} todate={todate} />
                     
                   </div>;
