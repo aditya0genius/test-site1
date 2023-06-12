@@ -42,7 +42,7 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>Social Media</Heading>
-            <FooterLink href="#">
+            <FooterLink href="https://www.facebook.com/profile.php?id=100093362179754&mibextid=ZbWKwL" target="_blank">
               <i className="fab fa-facebook-f">
                 <span style={{ marginLeft: "10px" }}>
                   Facebook
